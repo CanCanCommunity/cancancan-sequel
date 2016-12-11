@@ -1,6 +1,6 @@
 # CanCanCan-Sequel 
 
-[![Build Status](https://travis-ci.org/CanCanCommunity/cancancan-sequel.svg?branch=master)](https://travis-ci.org/https://travis-ci.org/CanCanCommunity/cancancan-sequel)
+[![Build Status](https://travis-ci.org/CanCanCommunity/cancancan-sequel.svg?branch=master)](https://travis-ci.org/CanCanCommunity/cancancan-sequel)
 
 [![Code Climate](https://codeclimate.com/github/CanCanCommunity/cancancan-sequel/badges/gpa.svg)] (https://codeclimate.com/github/CanCanCommunity/cancancan-sequel) 
 
