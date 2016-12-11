@@ -5,7 +5,7 @@ require 'cancancan/sequel/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'cancancan-sequel'
-  spec.version       = CanCanCan::Squeel::VERSION
+  spec.version       = CanCanCan::Sequel::VERSION
   spec.authors       = ['Alessandro Rodi']
   spec.email         = ['coorasse@gmail.com']
   spec.license       = 'MIT'
