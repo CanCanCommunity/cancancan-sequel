@@ -31,5 +31,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activerecord', '>= 4.1'
   spec.add_dependency 'cancancan', '~> 1.15'
+  spec.add_dependency 'sequel', '~> 3.48.0'
   # TODO: spec.add_dependency 'cancancan', '~> 2.0'
 end
