@@ -15,18 +15,21 @@ module CanCan
 
       def self.matches_condition?(subject, name, value)
         obj = subject.send(name)
-        return false if obj.nil?
-        value.each do |k, v|
-          if v.is_a?(Hash)
-            return false unless self.matches_condition?(obj, k, v)
-          elsif obj.send(k) != v
-            return false
+        if obj.nil?
+          false
+        else
+          value.each do |k, v|
+            if v.is_a?(Hash)
+              return false unless matches_condition?(obj, k, v)
+            elsif obj.send(k) != v
+              return false
+            end
           end
         end
       end
 
       def database_records
-        if @rules.size.zero?
+        if @rules.empty?
           @model_class.where('1=0')
         else
           # only need to process can rules if there are no can rule with empty conditions
@@ -58,7 +61,7 @@ module CanCan
           if value.is_a? Hash
             value = value.dup
             association_class = model_class.association_reflection(name).associated_class
-            nested = value.each_with_object({}) do |(k, v), nested|
+            nested_result = value.each_with_object({}) do |(k, v), nested|
               if v.is_a?(Hash)
                 value.delete(k)
                 nested_class = association_class.association_reflection(k).associated_class
@@ -67,7 +70,7 @@ module CanCan
                 nested[k] = v
               end
             end
-            result_hash[name] = association_class.where(nested)
+            result_hash[name] = association_class.where(nested_result)
           else
             result_hash[name] = value
           end

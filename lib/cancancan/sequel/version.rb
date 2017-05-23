@@ -1,7 +1,7 @@
-# frozen_string_literal: true
-
+module CanCanCan
+end
 module CanCanCan
   module Sequel
-    VERSION = '2.0.0'
+    VERSION = '2.0.0'.freeze
   end
 end
